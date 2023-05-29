@@ -874,6 +874,288 @@ class Ui_infoMainWindow(object):
         self.verticalLayout_6.addWidget(self.displayMainFrame)
 
         self.infoWidget.addWidget(self.displayPage)
+        self.memoryPage = QWidget()
+        self.memoryPage.setObjectName(u"memoryPage")
+        self.verticalLayout_21 = QVBoxLayout(self.memoryPage)
+        self.verticalLayout_21.setObjectName(u"verticalLayout_21")
+        self.memoryMainFrame = QFrame(self.memoryPage)
+        self.memoryMainFrame.setObjectName(u"memoryMainFrame")
+        self.memoryMainFrame.setFrameShape(QFrame.NoFrame)
+        self.memoryMainFrame.setFrameShadow(QFrame.Plain)
+        self.verticalLayout_22 = QVBoxLayout(self.memoryMainFrame)
+        self.verticalLayout_22.setObjectName(u"verticalLayout_22")
+        self.memoryHeaderFrame = QFrame(self.memoryMainFrame)
+        self.memoryHeaderFrame.setObjectName(u"memoryHeaderFrame")
+        self.memoryHeaderFrame.setFrameShape(QFrame.NoFrame)
+        self.memoryHeaderFrame.setFrameShadow(QFrame.Plain)
+        self.horizontalLayout_6 = QHBoxLayout(self.memoryHeaderFrame)
+        self.horizontalLayout_6.setObjectName(u"horizontalLayout_6")
+        self.memHeadingLbl = QLabel(self.memoryHeaderFrame)
+        self.memHeadingLbl.setObjectName(u"memHeadingLbl")
+        sizePolicy3.setHeightForWidth(self.memHeadingLbl.sizePolicy().hasHeightForWidth())
+        self.memHeadingLbl.setSizePolicy(sizePolicy3)
+        self.memHeadingLbl.setFont(font4)
+
+        self.horizontalLayout_6.addWidget(self.memHeadingLbl)
+
+        self.memHeadingInfoLbl = QLabel(self.memoryHeaderFrame)
+        self.memHeadingInfoLbl.setObjectName(u"memHeadingInfoLbl")
+        sizePolicy1.setHeightForWidth(self.memHeadingInfoLbl.sizePolicy().hasHeightForWidth())
+        self.memHeadingInfoLbl.setSizePolicy(sizePolicy1)
+        self.memHeadingInfoLbl.setFont(font5)
+        self.memHeadingInfoLbl.setAlignment(Qt.AlignRight|Qt.AlignTrailing|Qt.AlignVCenter)
+
+        self.horizontalLayout_6.addWidget(self.memHeadingInfoLbl)
+
+
+        self.verticalLayout_22.addWidget(self.memoryHeaderFrame)
+
+        self.memoryInfoFrame = QFrame(self.memoryMainFrame)
+        self.memoryInfoFrame.setObjectName(u"memoryInfoFrame")
+        sizePolicy.setHeightForWidth(self.memoryInfoFrame.sizePolicy().hasHeightForWidth())
+        self.memoryInfoFrame.setSizePolicy(sizePolicy)
+        self.memoryInfoFrame.setStyleSheet(u"QFrame {\n"
+"	background-color: #22223b;\n"
+"	border-radius: 12px;\n"
+"}")
+        self.memoryInfoFrame.setFrameShape(QFrame.NoFrame)
+        self.memoryInfoFrame.setFrameShadow(QFrame.Plain)
+        self.horizontalLayout_7 = QHBoxLayout(self.memoryInfoFrame)
+        self.horizontalLayout_7.setObjectName(u"horizontalLayout_7")
+        self.mem1Frame = QFrame(self.memoryInfoFrame)
+        self.mem1Frame.setObjectName(u"mem1Frame")
+        self.mem1Frame.setStyleSheet(u"QFrame {\n"
+"	background-color: #9a8c98;\n"
+"	color: white;\n"
+"}")
+        self.mem1Frame.setFrameShape(QFrame.NoFrame)
+        self.mem1Frame.setFrameShadow(QFrame.Plain)
+        self.verticalLayout_23 = QVBoxLayout(self.mem1Frame)
+        self.verticalLayout_23.setObjectName(u"verticalLayout_23")
+        self.memNameLbl_0 = QLabel(self.mem1Frame)
+        self.memNameLbl_0.setObjectName(u"memNameLbl_0")
+        sizePolicy4 = QSizePolicy(QSizePolicy.Preferred, QSizePolicy.Maximum)
+        sizePolicy4.setHorizontalStretch(0)
+        sizePolicy4.setVerticalStretch(0)
+        sizePolicy4.setHeightForWidth(self.memNameLbl_0.sizePolicy().hasHeightForWidth())
+        self.memNameLbl_0.setSizePolicy(sizePolicy4)
+        font8 = QFont()
+        font8.setFamilies([u"Raleway"])
+        font8.setPointSize(16)
+        font8.setBold(True)
+        self.memNameLbl_0.setFont(font8)
+        self.memNameLbl_0.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignVCenter)
+
+        self.verticalLayout_23.addWidget(self.memNameLbl_0)
+
+        self.memClockSpeedLbl_0 = QLabel(self.mem1Frame)
+        self.memClockSpeedLbl_0.setObjectName(u"memClockSpeedLbl_0")
+        font9 = QFont()
+        font9.setFamilies([u"Raleway"])
+        font9.setPointSize(12)
+        font9.setBold(False)
+        self.memClockSpeedLbl_0.setFont(font9)
+        self.memClockSpeedLbl_0.setWordWrap(True)
+
+        self.verticalLayout_23.addWidget(self.memClockSpeedLbl_0)
+
+        self.memVoltageLbl_0 = QLabel(self.mem1Frame)
+        self.memVoltageLbl_0.setObjectName(u"memVoltageLbl_0")
+        self.memVoltageLbl_0.setFont(font9)
+        self.memVoltageLbl_0.setWordWrap(True)
+
+        self.verticalLayout_23.addWidget(self.memVoltageLbl_0)
+
+        self.memDataWidthLbl_0 = QLabel(self.mem1Frame)
+        self.memDataWidthLbl_0.setObjectName(u"memDataWidthLbl_0")
+        self.memDataWidthLbl_0.setFont(font9)
+        self.memDataWidthLbl_0.setWordWrap(True)
+
+        self.verticalLayout_23.addWidget(self.memDataWidthLbl_0)
+
+        self.memSerialNoLbl_0 = QLabel(self.mem1Frame)
+        self.memSerialNoLbl_0.setObjectName(u"memSerialNoLbl_0")
+        self.memSerialNoLbl_0.setFont(font9)
+        self.memSerialNoLbl_0.setWordWrap(True)
+
+        self.verticalLayout_23.addWidget(self.memSerialNoLbl_0)
+
+        self.memCapacityLbl_0 = QLabel(self.mem1Frame)
+        self.memCapacityLbl_0.setObjectName(u"memCapacityLbl_0")
+        self.memCapacityLbl_0.setFont(font9)
+        self.memCapacityLbl_0.setWordWrap(True)
+
+        self.verticalLayout_23.addWidget(self.memCapacityLbl_0)
+
+
+        self.horizontalLayout_7.addWidget(self.mem1Frame)
+
+        self.mem2Frame = QFrame(self.memoryInfoFrame)
+        self.mem2Frame.setObjectName(u"mem2Frame")
+        self.mem2Frame.setFrameShape(QFrame.NoFrame)
+        self.mem2Frame.setFrameShadow(QFrame.Plain)
+        self.verticalLayout_24 = QVBoxLayout(self.mem2Frame)
+        self.verticalLayout_24.setObjectName(u"verticalLayout_24")
+        self.memNameLbl_1 = QLabel(self.mem2Frame)
+        self.memNameLbl_1.setObjectName(u"memNameLbl_1")
+        sizePolicy4.setHeightForWidth(self.memNameLbl_1.sizePolicy().hasHeightForWidth())
+        self.memNameLbl_1.setSizePolicy(sizePolicy4)
+        self.memNameLbl_1.setFont(font8)
+        self.memNameLbl_1.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignVCenter)
+
+        self.verticalLayout_24.addWidget(self.memNameLbl_1)
+
+        self.memClockSpeedLbl_1 = QLabel(self.mem2Frame)
+        self.memClockSpeedLbl_1.setObjectName(u"memClockSpeedLbl_1")
+        self.memClockSpeedLbl_1.setFont(font9)
+        self.memClockSpeedLbl_1.setWordWrap(True)
+
+        self.verticalLayout_24.addWidget(self.memClockSpeedLbl_1)
+
+        self.memVoltageLbl_1 = QLabel(self.mem2Frame)
+        self.memVoltageLbl_1.setObjectName(u"memVoltageLbl_1")
+        self.memVoltageLbl_1.setFont(font9)
+        self.memVoltageLbl_1.setWordWrap(True)
+
+        self.verticalLayout_24.addWidget(self.memVoltageLbl_1)
+
+        self.memDataWidthLbl_1 = QLabel(self.mem2Frame)
+        self.memDataWidthLbl_1.setObjectName(u"memDataWidthLbl_1")
+        self.memDataWidthLbl_1.setFont(font9)
+        self.memDataWidthLbl_1.setWordWrap(True)
+
+        self.verticalLayout_24.addWidget(self.memDataWidthLbl_1)
+
+        self.memSerialNoLbl_1 = QLabel(self.mem2Frame)
+        self.memSerialNoLbl_1.setObjectName(u"memSerialNoLbl_1")
+        self.memSerialNoLbl_1.setFont(font9)
+        self.memSerialNoLbl_1.setWordWrap(True)
+
+        self.verticalLayout_24.addWidget(self.memSerialNoLbl_1)
+
+        self.memCapacityLbl_1 = QLabel(self.mem2Frame)
+        self.memCapacityLbl_1.setObjectName(u"memCapacityLbl_1")
+        self.memCapacityLbl_1.setFont(font9)
+        self.memCapacityLbl_1.setWordWrap(True)
+
+        self.verticalLayout_24.addWidget(self.memCapacityLbl_1)
+
+
+        self.horizontalLayout_7.addWidget(self.mem2Frame)
+
+        self.mem3Frame = QFrame(self.memoryInfoFrame)
+        self.mem3Frame.setObjectName(u"mem3Frame")
+        self.mem3Frame.setFrameShape(QFrame.NoFrame)
+        self.mem3Frame.setFrameShadow(QFrame.Plain)
+        self.verticalLayout_25 = QVBoxLayout(self.mem3Frame)
+        self.verticalLayout_25.setObjectName(u"verticalLayout_25")
+        self.memNameLbl_2 = QLabel(self.mem3Frame)
+        self.memNameLbl_2.setObjectName(u"memNameLbl_2")
+        sizePolicy4.setHeightForWidth(self.memNameLbl_2.sizePolicy().hasHeightForWidth())
+        self.memNameLbl_2.setSizePolicy(sizePolicy4)
+        self.memNameLbl_2.setFont(font8)
+        self.memNameLbl_2.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignVCenter)
+
+        self.verticalLayout_25.addWidget(self.memNameLbl_2)
+
+        self.memClockSpeedLbl_2 = QLabel(self.mem3Frame)
+        self.memClockSpeedLbl_2.setObjectName(u"memClockSpeedLbl_2")
+        self.memClockSpeedLbl_2.setFont(font9)
+        self.memClockSpeedLbl_2.setWordWrap(True)
+
+        self.verticalLayout_25.addWidget(self.memClockSpeedLbl_2)
+
+        self.memVoltageLbl_2 = QLabel(self.mem3Frame)
+        self.memVoltageLbl_2.setObjectName(u"memVoltageLbl_2")
+        self.memVoltageLbl_2.setFont(font9)
+        self.memVoltageLbl_2.setWordWrap(True)
+
+        self.verticalLayout_25.addWidget(self.memVoltageLbl_2)
+
+        self.memDataWidthLbl_2 = QLabel(self.mem3Frame)
+        self.memDataWidthLbl_2.setObjectName(u"memDataWidthLbl_2")
+        self.memDataWidthLbl_2.setFont(font9)
+        self.memDataWidthLbl_2.setWordWrap(True)
+
+        self.verticalLayout_25.addWidget(self.memDataWidthLbl_2)
+
+        self.memSerialNoLbl_2 = QLabel(self.mem3Frame)
+        self.memSerialNoLbl_2.setObjectName(u"memSerialNoLbl_2")
+        self.memSerialNoLbl_2.setFont(font9)
+        self.memSerialNoLbl_2.setWordWrap(True)
+
+        self.verticalLayout_25.addWidget(self.memSerialNoLbl_2)
+
+        self.memCapacityLbl_2 = QLabel(self.mem3Frame)
+        self.memCapacityLbl_2.setObjectName(u"memCapacityLbl_2")
+        self.memCapacityLbl_2.setFont(font9)
+        self.memCapacityLbl_2.setWordWrap(True)
+
+        self.verticalLayout_25.addWidget(self.memCapacityLbl_2)
+
+
+        self.horizontalLayout_7.addWidget(self.mem3Frame)
+
+        self.mem4Frame = QFrame(self.memoryInfoFrame)
+        self.mem4Frame.setObjectName(u"mem4Frame")
+        self.mem4Frame.setFrameShape(QFrame.NoFrame)
+        self.mem4Frame.setFrameShadow(QFrame.Plain)
+        self.verticalLayout_26 = QVBoxLayout(self.mem4Frame)
+        self.verticalLayout_26.setObjectName(u"verticalLayout_26")
+        self.memNameLbl_3 = QLabel(self.mem4Frame)
+        self.memNameLbl_3.setObjectName(u"memNameLbl_3")
+        sizePolicy4.setHeightForWidth(self.memNameLbl_3.sizePolicy().hasHeightForWidth())
+        self.memNameLbl_3.setSizePolicy(sizePolicy4)
+        self.memNameLbl_3.setFont(font8)
+        self.memNameLbl_3.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignVCenter)
+
+        self.verticalLayout_26.addWidget(self.memNameLbl_3)
+
+        self.memClockSpeedLbl_3 = QLabel(self.mem4Frame)
+        self.memClockSpeedLbl_3.setObjectName(u"memClockSpeedLbl_3")
+        self.memClockSpeedLbl_3.setFont(font9)
+        self.memClockSpeedLbl_3.setWordWrap(True)
+
+        self.verticalLayout_26.addWidget(self.memClockSpeedLbl_3)
+
+        self.memVoltageLbl_3 = QLabel(self.mem4Frame)
+        self.memVoltageLbl_3.setObjectName(u"memVoltageLbl_3")
+        self.memVoltageLbl_3.setFont(font9)
+        self.memVoltageLbl_3.setWordWrap(True)
+
+        self.verticalLayout_26.addWidget(self.memVoltageLbl_3)
+
+        self.memDataWidthLbl_3 = QLabel(self.mem4Frame)
+        self.memDataWidthLbl_3.setObjectName(u"memDataWidthLbl_3")
+        self.memDataWidthLbl_3.setFont(font9)
+        self.memDataWidthLbl_3.setWordWrap(True)
+
+        self.verticalLayout_26.addWidget(self.memDataWidthLbl_3)
+
+        self.memSerialNoLbl_3 = QLabel(self.mem4Frame)
+        self.memSerialNoLbl_3.setObjectName(u"memSerialNoLbl_3")
+        self.memSerialNoLbl_3.setFont(font9)
+        self.memSerialNoLbl_3.setWordWrap(True)
+
+        self.verticalLayout_26.addWidget(self.memSerialNoLbl_3)
+
+        self.memCapacityLbl_3 = QLabel(self.mem4Frame)
+        self.memCapacityLbl_3.setObjectName(u"memCapacityLbl_3")
+        self.memCapacityLbl_3.setFont(font9)
+        self.memCapacityLbl_3.setWordWrap(True)
+
+        self.verticalLayout_26.addWidget(self.memCapacityLbl_3)
+
+
+        self.horizontalLayout_7.addWidget(self.mem4Frame)
+
+
+        self.verticalLayout_22.addWidget(self.memoryInfoFrame)
+
+
+        self.verticalLayout_21.addWidget(self.memoryMainFrame)
+
+        self.infoWidget.addWidget(self.memoryPage)
 
         self.verticalLayout_2.addWidget(self.infoWidget)
 
@@ -884,14 +1166,14 @@ class Ui_infoMainWindow(object):
 
         self.retranslateUi(infoMainWindow)
 
-        self.infoWidget.setCurrentIndex(1)
+        self.infoWidget.setCurrentIndex(3)
 
 
         QMetaObject.connectSlotsByName(infoMainWindow)
     # setupUi
 
     def retranslateUi(self, infoMainWindow):
-        infoMainWindow.setWindowTitle(QCoreApplication.translate("infoMainWindow", u"MainWindow", None))
+        infoMainWindow.setWindowTitle(QCoreApplication.translate("infoMainWindow", u"SYSTEM-Z", None))
         self.headerLbl.setText(QCoreApplication.translate("infoMainWindow", u"SYSTEM-Z", None))
         self.homeBtn.setText(QCoreApplication.translate("infoMainWindow", u"HOME", None))
         self.cpuBtn.setText(QCoreApplication.translate("infoMainWindow", u"CPU", None))
@@ -949,5 +1231,31 @@ class Ui_infoMainWindow(object):
         self.gpuCompatLbl.setText(QCoreApplication.translate("infoMainWindow", u"Adapter Compatibility:", None))
         self.gpuMinHzLbl.setText(QCoreApplication.translate("infoMainWindow", u"Minimum Refresh Rate", None))
         self.gpuMaxHzLbl.setText(QCoreApplication.translate("infoMainWindow", u"Maximum Refresh Rate:", None))
+        self.memHeadingLbl.setText(QCoreApplication.translate("infoMainWindow", u"Memory", None))
+        self.memHeadingInfoLbl.setText(QCoreApplication.translate("infoMainWindow", u"TOTAL MEMORY", None))
+        self.memNameLbl_0.setText(QCoreApplication.translate("infoMainWindow", u"MEMORY PART NAME", None))
+        self.memClockSpeedLbl_0.setText(QCoreApplication.translate("infoMainWindow", u"Clock Speed", None))
+        self.memVoltageLbl_0.setText(QCoreApplication.translate("infoMainWindow", u"Voltage", None))
+        self.memDataWidthLbl_0.setText(QCoreApplication.translate("infoMainWindow", u"Data Width", None))
+        self.memSerialNoLbl_0.setText(QCoreApplication.translate("infoMainWindow", u"Serial Number", None))
+        self.memCapacityLbl_0.setText(QCoreApplication.translate("infoMainWindow", u"Capacity", None))
+        self.memNameLbl_1.setText(QCoreApplication.translate("infoMainWindow", u"MEMORY PART NAME", None))
+        self.memClockSpeedLbl_1.setText(QCoreApplication.translate("infoMainWindow", u"Clock Speed", None))
+        self.memVoltageLbl_1.setText(QCoreApplication.translate("infoMainWindow", u"Voltage", None))
+        self.memDataWidthLbl_1.setText(QCoreApplication.translate("infoMainWindow", u"Data Width", None))
+        self.memSerialNoLbl_1.setText(QCoreApplication.translate("infoMainWindow", u"Serial Number", None))
+        self.memCapacityLbl_1.setText(QCoreApplication.translate("infoMainWindow", u"Capacity", None))
+        self.memNameLbl_2.setText(QCoreApplication.translate("infoMainWindow", u"MEMORY PART NAME", None))
+        self.memClockSpeedLbl_2.setText(QCoreApplication.translate("infoMainWindow", u"Clock Speed", None))
+        self.memVoltageLbl_2.setText(QCoreApplication.translate("infoMainWindow", u"Voltage", None))
+        self.memDataWidthLbl_2.setText(QCoreApplication.translate("infoMainWindow", u"Data Width", None))
+        self.memSerialNoLbl_2.setText(QCoreApplication.translate("infoMainWindow", u"Serial Number", None))
+        self.memCapacityLbl_2.setText(QCoreApplication.translate("infoMainWindow", u"Capacity", None))
+        self.memNameLbl_3.setText(QCoreApplication.translate("infoMainWindow", u"MEMORY PART NAME", None))
+        self.memClockSpeedLbl_3.setText(QCoreApplication.translate("infoMainWindow", u"Clock Speed", None))
+        self.memVoltageLbl_3.setText(QCoreApplication.translate("infoMainWindow", u"Voltage", None))
+        self.memDataWidthLbl_3.setText(QCoreApplication.translate("infoMainWindow", u"Data Width", None))
+        self.memSerialNoLbl_3.setText(QCoreApplication.translate("infoMainWindow", u"Serial Number", None))
+        self.memCapacityLbl_3.setText(QCoreApplication.translate("infoMainWindow", u"Capacity", None))
     # retranslateUi
 

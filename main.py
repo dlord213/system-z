@@ -4,6 +4,7 @@ import datetime
 import wmi
 import platform
 import sys
+import math
 from PySide6.QtGui import *
 from PySide6.QtWidgets import *
 from PySide6.QtCore import *
@@ -17,6 +18,9 @@ class mainApp(QMainWindow, Ui_infoMainWindow):
     os_info = wmi.WMI().Win32_OperatingSystem()[0]
     sys_info = wmi.WMI().Win32_ComputerSystem()[0]
     gpu_info = wmi.WMI().Win32_VideoController()[0]
+    mem_info = wmi.WMI().Win32_PhysicalMemory()
+    memory_range = len(mem_info)
+
     bios_info = wmi.WMI().Win32_BIOS()[0]
     cpu_info = cpuinfo.get_cpu_info()
 
@@ -27,9 +31,16 @@ class mainApp(QMainWindow, Ui_infoMainWindow):
         self.checkCPU()
         self.checkCPUFlags()
         self.checkGPU()
+        self.checkMemory()
         self.infoWidget.setCurrentIndex(0)
 
         self.initializeBtns()
+
+    def convert(self, bytes, to, bsize=1024):
+
+        a = {'k' : 1, 'm': 2, 'g' : 3, 't' : 4, 'p' : 5, 'e' : 6 }
+        r = float(bytes)
+        return bytes / (bsize ** a[to])
 
     def initializeBtns(self):
         self.homeBtn.clicked.connect(lambda: self.infoWidget.setCurrentIndex(0))
@@ -112,8 +123,6 @@ class mainApp(QMainWindow, Ui_infoMainWindow):
             self.thumbCheck.setChecked(True)
 
     def checkGPU(self):
-        print(self.gpu_info)
-
         self.gpuInfoHeadingLbl.setText(f"{self.gpu_info.CurrentHorizontalResolution} x {self.gpu_info.CurrentVerticalResolution} ({self.gpu_info.CurrentBitsPerPixel}-bit depth)")
         self.gpuNameLbl.setText(f"Name: {self.gpu_info.Name}")
         self.gpuDriverVerLbl.setText(f"Driver Version: {self.gpu_info.DriverVersion}")
@@ -123,7 +132,66 @@ class mainApp(QMainWindow, Ui_infoMainWindow):
         self.gpuMinHzLbl.setText(f"Minimum Refresh Rate: {self.gpu_info.MinRefreshRate}hz")
         self.gpuMaxHzLbl.setText(f"Maximum Refresh Rate: {self.gpu_info.MaxRefreshRate}hz")
 
-    
+    def checkMemory(self):
+        totalMemorySize = 0
+
+        count = 1
+
+        activeMemStyle = "QFrame { background-color: #9a8c98; color: white;}"
+
+        for memory_num in range(0, self.memory_range):
+            totalMemorySize += self.convert(int(self.mem_info[memory_num].Capacity), 'm')
+        self.memHeadingInfoLbl.setText(f"{self.memory_range} Physical Memory ({str(totalMemorySize).replace('.0', '').strip()} MB)")
+
+        for memory_num in range(0, self.memory_range):
+            if memory_num == 0:
+                self.memNameLbl_0.setText(self.mem_info[memory_num].PartNumber)
+                self.memClockSpeedLbl_0.setText(f"Clock Speed: {self.mem_info[memory_num].Speed}")
+                self.memVoltageLbl_0.setText(f"Voltage: {self.mem_info[memory_num].MaxVoltage} V")
+                self.memDataWidthLbl_0.setText(f"Data Width: {self.mem_info[memory_num].DataWidth}")
+                self.memSerialNoLbl_0.setText(f"Serial Number: {self.mem_info[memory_num].SerialNumber}")
+                self.memCapacityLbl_0.setText(f"Capacity: {str(self.convert(int(self.mem_info[memory_num].Capacity), 'm')).replace('.0', '')} MB")
+            elif memory_num == 1:
+                self.memNameLbl_1.setText(self.mem_info[memory_num].PartNumber)
+                self.memClockSpeedLbl_1.setText(f"Clock Speed: {self.mem_info[memory_num].Speed}")
+                self.memVoltageLbl_1.setText(f"Voltage: {self.mem_info[memory_num].MaxVoltage} V")
+                self.memDataWidthLbl_1.setText(f"Data Width: {self.mem_info[memory_num].DataWidth}")
+                self.memSerialNoLbl_1.setText(f"Serial Number: {self.mem_info[memory_num].SerialNumber}")
+                self.memCapacityLbl_1.setText(f"Capacity: {str(self.convert(int(self.mem_info[memory_num].Capacity), 'm')).replace('.0', '')} MB")
+                count = 2
+            elif memory_num == 2:
+                self.memNameLbl_2.setText(self.mem_info[memory_num].PartNumber)
+                self.memClockSpeedLbl_2.setText(f"Clock Speed: {self.mem_info[memory_num].Speed}")
+                self.memVoltageLbl_2.setText(f"Voltage: {self.mem_info[memory_num].MaxVoltage} V")
+                self.memDataWidthLbl_2.setText(f"Data Width: {self.mem_info[memory_num].DataWidth}")
+                self.memSerialNoLbl_2.setText(f"Serial Number: {self.mem_info[memory_num].SerialNumber}")
+                self.memCapacityLbl_2.setText(f"Capacity: {str(self.convert(int(self.mem_info[memory_num].Capacity), 'm')).replace('.0', '')} MB")
+                count = 3
+            elif memory_num == 3:
+                self.memNameLbl_3.setText(self.mem_info[memory_num].PartNumber)
+                self.memClockSpeedLbl_3.setText(f"Clock Speed: {self.mem_info[memory_num].Speed}")
+                self.memVoltageLbl_3.setText(f"Voltage: {self.mem_info[memory_num].MaxVoltage} V")
+                self.memDataWidthLbl_3.setText(f"Data Width: {self.mem_info[memory_num].DataWidth}")
+                self.memSerialNoLbl_3.setText(f"Serial Number: {self.mem_info[memory_num].SerialNumber}")
+                self.memCapacityLbl_3.setText(f"Capacity: {str(self.convert(int(self.mem_info[memory_num].Capacity), 'm')).replace('.0', '')} MB")
+                count = 4
+
+        if count == 1:
+            self.mem2Frame.hide()
+            self.mem3Frame.hide()
+            self.mem4Frame.hide()
+        elif count == 2:
+            self.mem2Frame.setStyleSheet(activeMemStyle)
+            self.mem3Frame.hide()
+            self.mem4Frame.hide()
+        elif count == 3:
+            self.mem2Frame.setStyleSheet(activeMemStyle)
+            self.mem3Frame.setStyleSheet(activeMemStyle)
+            self.mem4Frame.hide()
+        elif count == 4:
+            self.mem2Frame.setStyleSheet(activeMemStyle)
+            self.mem3Frame.setStyleSheet(activeMemStyle)
+            self.mem4Frame.setStyleSheet(activeMemStyle)
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
