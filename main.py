@@ -123,6 +123,8 @@ class mainApp(QMainWindow, Ui_infoMainWindow):
         self.gpuMinHzLbl.setText(f"Minimum Refresh Rate: {self.gpu_info.MinRefreshRate}hz")
         self.gpuMaxHzLbl.setText(f"Maximum Refresh Rate: {self.gpu_info.MaxRefreshRate}hz")
 
+    
+
 if __name__ == "__main__":
     app = QApplication(sys.argv)
     win = mainApp()
